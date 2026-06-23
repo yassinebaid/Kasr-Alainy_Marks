@@ -1,0 +1,425 @@
+:root {
+    --bg-gray: #f2f2f2;
+    --white: #ffffff;
+    --blue: #0066cc;
+    --light-blue: #e6f2ff;
+    --gray-text: #777777;
+    --dark-gray: #333333;
+    --border-color: #dddddd;
+    --shadow: 0 2px 6px rgba(0,0,0,0.15);
+    --radius: 8px;
+    --font-sans: 'Helvetica Neue', Arial, sans-serif;
+    --font-arabic: 'Tahoma', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+/* Header */
+
+.topbar{
+    height:80px;
+    background:#0d6cc8;
+    display:flex;
+    align-items:center;
+    padding:0 20px;
+}
+
+.topbar-logo{
+    width:60px;
+    height:60px;
+    border-radius:15px;
+    margin-right:15px;
+}
+
+.topbar-title{
+    color:#fff;
+    font-size:32px;
+    font-weight:600;
+}
+
+.header-icons{
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.icon-with-arrow{
+    display:flex;
+    align-items:center;
+    gap:4px;
+}
+
+.header-icon{
+    width:20px;
+    height:20px;
+    stroke:white;
+    flex-shrink:0;
+}
+
+.arrow{
+    color:white;
+    font-size:11px;
+    line-height:1;
+}
+
+/* Body */
+
+body {
+    background-color: var(--bg-gray);
+    color: var(--dark-gray);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    min-height: 100vh;
+    padding: 0;
+}
+
+/* Login page specific centering */
+body.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Links */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ===== Login Page ===== */
+.login-container {
+    width: 90%;
+    max-width: 340px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 30px;
+    text-align: center;
+}
+
+.login-logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.login-container h1 {
+    font-size: 1.75rem;
+    color: var(--blue);
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.remember-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 25px;
+}
+
+.remember-group input {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.remember-group label {
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.signin-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.signin-btn:hover {
+    background: #0052a3;
+}
+
+/* ===== Dashboard Page ===== */
+.top-image{
+    display:flex;
+    justify-content:center;
+    margin:40px 0 50px;
+}
+
+.top-image img{
+    width:120px; /* غير الحجم حسب الصورة */
+    max-width:90%;
+    height:auto;
+}
+
+.topbar {
+    height: 60px;
+    background: var(--blue);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.topbar-logo {
+    height: 40px;
+    width: auto;
+    margin-right: 12px;
+}
+
+.topbar-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.dashboard-content {
+    display: grid;
+    margin-top: 30px;
+    gap: 16px;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.menu-card {
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 14px;
+    text-decoration: none;
+    transition: transform 0.1s, box-shadow 0.2s;
+}
+
+.menu-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.menu-card .card-content {
+    flex-grow: 1;
+    font-size: 1rem;
+}
+
+.menu-card .card-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--light-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 12px;
+    font-size: 1.2rem;
+    color: var(--blue);
+}
+
+.card-icon img{
+    width:40px;
+    height:40px;
+    object-fit:contain;
+    display:block;
+}
+
+.dashboard-footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: var(--gray-text);
+}
+
+/* ===== Score Page ===== */
+.table-toolbar{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+.play-btn{
+    width:40px;
+    height:40px;
+    font-size:14px;
+    border:1px solid #ddd;
+    background:#fff;
+}
+
+.warning-box{
+    display:flex;
+    align-items:center;
+    height:40px;
+    border:1px solid #ddd;
+    background:#fff;
+}
+
+.warning-icon{
+    width:40px;
+    height:40px;
+    font-size:16px;
+    background:#c5c9ce;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.warning-box span:last-child{
+    padding:0 12px;
+    font-size:14px;
+}
+
+.table-footer{
+    text-align:right;
+    padding:10px 20px;
+    font-size:14px;
+}
+
+.topbar{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+}
+
+.value {
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.student-info{
+    position: fixed;
+    top:50px; /* تحت الهيدر مباشرة */
+    left:0;
+    width:100%;
+    z-index:999;
+    background:#fff;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+main{
+    padding-top:220px; /* حسب ارتفاع الهيدر + student-info */
+    background:#fff;
+}
+
+.arabic-note {
+    margin-top: 12px;
+    font-size: 0.99rem;
+    font-weight: bold;
+    line-height: 1.6;
+    color: var(--blue);
+    direction: rtl;
+}
+
+.year-section {
+    margin-bottom: 30px;
+}
+
+.year-title {
+    font-size: 1.3rem;
+    color: var(--blue);
+    margin-bottom: 14px;
+    margin-right: 10px;
+    direction: rtl;
+    font-weight: 600;
+}
+
+.score-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 0.94rem;
+}
+
+.score-table th,
+.score-table td {
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.score-table th {
+    background-color: var(--light-blue);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.score-table td {
+    background-color: var(--white);
+}
+
+/* No data found */
+.no-data {
+    text-align: center;
+    padding: 24px;
+    font-size: 1.1rem;
+    color: var(--gray-text);
+    direction: rtl;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px;
+    }
+    .login-container h1 {
+        font-size: 1.5rem;
+    }
+    .topbar {
+        height: 50px;
+        padding: 0 12px;
+    }
+    .topbar-logo {
+        height: 32px;
+    }
+    .topbar-title {
+        font-size: 1.1rem;
+    }
+    .dashboard-content {
+        grid-template-columns: 1fr;
+    }
+    .menu-card {
+        padding: 12px;
+    }
+}
